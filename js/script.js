@@ -17,11 +17,23 @@ function nextClick() {
    }
 }
 
-
-
 function prevClick() {
    
-   console.log('aperto');
+   var activeImg = $('.active');
+
+   if (activeImg.hasClass('first')) {
+
+      var nextActiveImg = $('img.last')
+
+      activeImg.removeClass('active');
+      nextActiveImg.addClass('active');
+   } else {
+
+      var nextActiveImg = activeImg.prev('img');
+
+      activeImg.removeClass('active');
+      nextActiveImg.addClass('active');
+   }
 }
 
 function init() {
